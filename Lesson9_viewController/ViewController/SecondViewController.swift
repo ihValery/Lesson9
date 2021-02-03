@@ -14,8 +14,6 @@ class SecondViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
-
     /*
     // MARK: - Navigation
 
@@ -25,5 +23,23 @@ class SecondViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueThirdVCtwo" {                                 //определяем по какому переходу идем
+            let myThirdVC = segue.destination as! ThirdViewController              //кастим что-бы достучаться до свойства
+//            myThirdVC.textsegueThirdVCtwo = segue.identifier
+            myThirdVC.textsegueThirdVCtwo = "My name is ...My name is ...My name is ..."
+        }
+    }
+    
+    @IBAction func myUnwindSegue(segue: UIStoryboardSegue) {
+        let myThirdVC = segue.source as! ThirdViewController                      //источник данных (кто предоставляет)
+        title = myThirdVC.textsegueThirdVCtwo
+        
+    }
+    
+    deinit {                                                //деинициализатор - удаляет из памяти
+        print("secondVC выгрузился из памяти")
+    }
 
 }

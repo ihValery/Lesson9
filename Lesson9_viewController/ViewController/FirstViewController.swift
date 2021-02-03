@@ -13,7 +13,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let mySecondVC = segue.destination                                              //destination назначение куда мы идем
+//        mySecondVC.navigationItem.title = segue.identifier                            //названию VC присваиваем значение нашего идентификатора segue
+        mySecondVC.navigationItem.title = "My name is ..."
+    }
 
 }
 

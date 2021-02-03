@@ -8,22 +8,26 @@
 import UIKit
 
 class ThirdViewController: UIViewController {
-
+    
+    @IBOutlet var textFieldThirdVC: UITextField!
+    
+    var textsegueThirdVCtwo: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        textFieldThirdVC.text = textsegueThirdVCtwo
+    }
+    @IBAction func passToTextAction(_ sender: UIButton) {
+        textsegueThirdVCtwo = textFieldThirdVC.text                           //из текстового поля присваеваем значение которое и передадим
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+//    @IBAction func actionButtonCloseThirdVC(_ sender: UIButton) {           //как пример метода для закрытыя (по кнопке) не передает данные!
+//            dismiss(animated: true)                                         //сразу выгружает VC
+//    }
+    
+    deinit {
+        print("thirdVC выгрузился из памяти")
     }
-    */
 
 }

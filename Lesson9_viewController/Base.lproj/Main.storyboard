@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="U23-s4-PGi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Uvo-PP-H0x">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ue-AK-Ccr">
-                                <rect key="frame" x="98" y="814" width="218" height="48"/>
+                                <rect key="frame" x="98" y="765" width="218" height="48"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
                                 <state key="normal" title="Go to Second VC">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -39,9 +39,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="839" y="94"/>
+            <point key="canvasLocation" x="1747.826086956522" y="93.75"/>
         </scene>
-        <!--Second VC-->
+        <!--Title-->
         <scene sceneID="cb2-UD-hRL">
             <objects>
                 <viewController id="Bas-QR-BaY" customClass="SecondViewController" customModule="Lesson9_viewController" customModuleProvider="target" sceneMemberID="viewController">
@@ -50,7 +50,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7S0-Pf-NMh">
-                                <rect key="frame" x="114" y="814" width="186" height="48"/>
+                                <rect key="frame" x="114" y="765" width="186" height="48"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
                                 <state key="normal" title="Go to Third VC">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -67,11 +67,17 @@
                             <constraint firstItem="7S0-Pf-NMh" firstAttribute="centerX" secondItem="pOV-FW-bOb" secondAttribute="centerX" id="qFx-aO-Axl"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Second VC" id="QyM-Rm-19Z"/>
+                    <navigationItem key="navigationItem" title="Title" id="VYQ-Cx-ABd">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="pWc-AQ-D8c">
+                            <connections>
+                                <segue destination="eBP-ua-KeH" kind="presentation" identifier="segueThirdVCtwo" id="r58-iP-Aqr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5b5-3P-9Aq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1632" y="94"/>
+            <point key="canvasLocation" x="2542.0289855072465" y="93.75"/>
         </scene>
         <!--Third View Controller-->
         <scene sceneID="AwT-nf-QYH">
@@ -86,25 +92,59 @@
                                 <state key="normal">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="dKo-Aj-8iG" kind="unwind" unwindAction="myUnwindSegueWithSegue:" id="cJW-uJ-jSa"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wLJ-iO-Lpo">
+                                <rect key="frame" x="20" y="67" width="374" height="45.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="c8U-g1-h6y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EhO-PU-fev">
+                                <rect key="frame" x="98" y="144" width="218" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="Ypv-z6-Ptc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                                <state key="normal" title="Передаем текст">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="passToTextAction:" destination="eBP-ua-KeH" eventType="touchUpInside" id="TQg-Kz-kYQ"/>
+                                    <segue destination="dKo-Aj-8iG" kind="unwind" unwindAction="myUnwindSegueWithSegue:" id="cNi-lv-noq"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ryP-YI-KzT"/>
                         <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="wLJ-iO-Lpo" firstAttribute="top" secondItem="ryP-YI-KzT" secondAttribute="top" constant="67" id="42w-8X-JpI"/>
                             <constraint firstItem="1nt-yP-4kv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ryP-YI-KzT" secondAttribute="leading" symbolic="YES" id="6ED-s5-y5i"/>
+                            <constraint firstItem="EhO-PU-fev" firstAttribute="top" secondItem="wLJ-iO-Lpo" secondAttribute="bottom" constant="31.5" id="YIj-3k-b3x"/>
                             <constraint firstItem="1nt-yP-4kv" firstAttribute="top" secondItem="ryP-YI-KzT" secondAttribute="top" constant="20" id="cnd-p9-Dnx"/>
+                            <constraint firstItem="wLJ-iO-Lpo" firstAttribute="centerX" secondItem="ryP-YI-KzT" secondAttribute="centerX" id="eIO-3K-zfL"/>
                             <constraint firstItem="ryP-YI-KzT" firstAttribute="trailing" secondItem="1nt-yP-4kv" secondAttribute="trailing" constant="20" id="ht8-Nk-kSs"/>
+                            <constraint firstItem="EhO-PU-fev" firstAttribute="centerX" secondItem="wLJ-iO-Lpo" secondAttribute="centerX" id="pXt-T6-4Tn"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textFieldThirdVC" destination="wLJ-iO-Lpo" id="3n2-fo-jm9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Riq-LR-G90" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="dKo-Aj-8iG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2393" y="94"/>
+            <point key="canvasLocation" x="3302.898550724638" y="93.75"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iLP-Jj-nWc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="U23-s4-PGi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="8TQ-hm-jb5"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="OPS-fV-Axn">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -117,7 +157,27 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JSS-6u-Lo9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="944.92753623188412" y="93.75"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Tpt-yA-dbV">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Uvo-PP-H0x" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="s8I-3n-TUG">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="U23-s4-PGi" kind="relationship" relationship="viewControllers" id="z4c-DY-q62"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LG9-88-fNK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="34.782608695652179" y="93.75"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="r58-iP-Aqr"/>
+    </inferredMetricsTieBreakers>
 </document>
