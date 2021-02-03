@@ -34,8 +34,9 @@ class SecondViewController: UIViewController {
     
     @IBAction func myUnwindSegue(segue: UIStoryboardSegue) {
         let myThirdVC = segue.source as! ThirdViewController                      //источник данных (кто предоставляет)
-        title = myThirdVC.textsegueThirdVCtwo
-        
+        guard myThirdVC.textsegueThirdVCtwo == "" else {                          //если ничего не ввели то и значение не меняется (на пустую строку)
+            return title = myThirdVC.textsegueThirdVCtwo
+        }
     }
     
     deinit {                                                //деинициализатор - удаляет из памяти

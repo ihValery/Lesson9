@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Uvo-PP-H0x">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -165,16 +166,51 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Uvo-PP-H0x" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="s8I-3n-TUG">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="U23-s4-PGi" kind="relationship" relationship="viewControllers" id="z4c-DY-q62"/>
+                        <segue destination="zVP-Zk-aca" kind="relationship" relationship="viewControllers" id="EJW-Jn-XyA"/>
+                        <segue destination="pDY-wb-uFy" kind="relationship" relationship="viewControllers" id="drL-j1-XLS"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LG9-88-fNK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="34.782608695652179" y="93.75"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="X4V-je-RLQ">
+            <objects>
+                <viewController id="zVP-Zk-aca" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XsQ-Um-n52">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="j7i-p4-3SI"/>
+                        <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="history" id="r8F-rp-SIR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LIq-cs-Rpa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-400" y="820"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="iMm-GJ-gOa">
+            <objects>
+                <viewController id="pDY-wb-uFy" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="r15-oU-2ag">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="RTV-tG-HT1"/>
+                        <color key="backgroundColor" red="0.58188301320000002" green="0.21569153669999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="downloads" id="vbN-Yl-FF6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TAE-7t-OlK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="590" y="813"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
